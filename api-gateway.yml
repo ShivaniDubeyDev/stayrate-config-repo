@@ -21,19 +21,20 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: https://dev-77584981.okta.com/oauth2/default
+          issuer-uri: https://<YOUR_AUTH0_DOMAIN>/
+          audience: https://api.stayrate.com
       client:
         registration:
-          okta:
-            client-id: 0oa7w65a24Px9Oyms5d7
-            client-secret: JfsTTqODW21uapbbhKjW42sGzjcNs86GN7WL5dfU
+          auth0:
+            client-id: <PASTE_REGULAR_WEB_APP_CLIENT_ID_HERE>
+            client-secret: <PASTE_REGULAR_WEB_APP_CLIENT_SECRET_HERE>
             scope: openid, profile, email, offline_access
-            provider: okta
+            provider: auth0
             authorization-grant-type: authorization_code
-            redirect-uri: "{baseUrl}/login/oauth2/code/okta"
+            redirect-uri: "{baseUrl}/login/oauth2/code/auth0"
         provider:
-          okta:
-            issuer-uri: https://dev-77584981.okta.com/oauth2/default
+          auth0:
+            issuer-uri: https://<YOUR_AUTH0_DOMAIN>/
 
 eureka:
   instance:

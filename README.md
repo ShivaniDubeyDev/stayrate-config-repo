@@ -90,7 +90,7 @@ java -jar target/api-gateway-0.0.1-SNAPSHOT.jar
 
 ## Verification & Monitoring
 
-* **Eureka Dashboard:** Open http://localhost:8761 in your browser to verify that all 5 client engines show a status value of `UP`.
+* **Eureka Dashboard:** Open [http://localhost:8761](http://localhost:8761) in your browser to verify that all 5 client engines show a status value of `UP`.
 * **Database Inspection:**
   * Use **MySQL Workbench** to look inside `user_db`.
   * Use **pgAdmin 4** to check tables inside `hotel_db`.
@@ -100,4 +100,4 @@ java -jar target/api-gateway-0.0.1-SNAPSHOT.jar
 
 1. Apply changes to any targeted `.yml` file directly inside this repository.
 2. Commit the updates to the main tracking branch (`main` or `master`).
-3. Broadcast a `POST` request to the client service's Actuator endpoint (`http://localhost:<port>/actuator/refresh`) to instantly propagate updates without system reboots.
+3. Broadcast a `POST` request to the client service's Actuator endpoint ([http://localhost:&lt;port&gt;/actuator/refresh](http://localhost:<port>/actuator/refresh)) to instantly propagate updates without system reboots.

@@ -16,6 +16,11 @@ spring:
         format_sql: true
   security:
     oauth2:
+      # 1. Native configuration to handle incoming JWT tokens
+      resourceserver:
+        jwt:
+          issuer-uri: https://dev-77584981.okta.com/oauth2/default
+      # 2. Native configuration for Feign / RestTemplate outward client authorization
       client:
         registration:
           my-internal-client:
@@ -37,10 +42,8 @@ eureka:
     service-url:
       defaultZone: http://localhost:8761/eureka
 
-okta:
-  oauth2:
-    issuer: https://dev-77584981.okta.com/oauth2/default
-    audience: api://default
+# REMOVED: The entire "okta:" properties block has been eliminated 
+# to prevent legacy 2.x class autowire scanning crashes.
 
 management:
   endpoints:

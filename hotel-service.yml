@@ -19,7 +19,8 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: https://dev-77584981.okta.com/oauth2/default
+          issuer-uri: https://<YOUR_AUTH0_DOMAIN>/
+          audience: https://api.stayrate.com
 
 eureka:
   instance:

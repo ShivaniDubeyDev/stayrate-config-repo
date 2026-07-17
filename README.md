@@ -36,17 +36,65 @@ This repository serves as the single source of truth for the externalized config
 
 ---
 
-## Execution & Operational Order
+## Infrastructure Prerequisites
 
-To launch the microservices architecture correctly without dependency failures, boot the components in this exact order:
-
-1. **Start Infrastructure Components:** Verify local instances of MySQL, PostgreSQL, and MongoDB are active.
-2. **Start Service Registry:** Run `ServiceRegistryApplication` (`8761`). Verify the dashboard via browser.
-3. **Start Config Server:** Run `ConfigServerApplication` (`8085`). Ensure it successfully clones this GitHub repository.
-4. **Start API Gateway:** Run `ApiGatewayApplication` (`8087`).
-5. **Start Domain Core Services:** Run `UserServiceApplication` (`8081`), `HotelServiceApplication` (`8082`), and `RatingServiceApplication` (`8083`) in any sequence.
+Ensure your local environments are running on their default ports before starting the ecosystem:
+* **MySQL:** Port `3306` (Database: `user_db`)
+* **PostgreSQL:** Port `5432` (Database: `hotel_db`, User: `postgres`)
+* **MongoDB:** Port `27017` (Database: `rating_db`)
+* **Java Version:** JDK 17 or JDK 23
 
 ---
+
+## Installation & Build
+
+Clone the repository and compile the source artifacts using the Maven wrapper. 
+
+*(Note: If using standard Windows CMD, omit the `./` prefix and run `mvnw clean package -DskipTests`)*
+
+```bash
+# Navigate to the platform root directory
+cd stayrate-platform
+
+# Compile and package all sub-modules bypassing unit tests (PowerShell / Bash)
+./mvnw clean package -DskipTests
+```
+
+## Ecosystem Startup Order
+
+Open a separate terminal window for each service and launch them in this precise chronological order to allow service registry configurations to discover and bind properly without timing out:
+
+```powershell
+# STEP 1: Start Service Discovery Hub First
+cd ServiceRegistry/ServiceRegistry
+java -jar target/service-registry-0.0.1-SNAPSHOT.jar
+
+# STEP 2: Start Centralized Configuration (Wait 10 seconds for service registry readiness)
+cd ../../ConfigServer/ConfigServer
+java -jar target/config-server-0.0.1-SNAPSHOT.jar
+
+# STEP 3: Start Core Domain Instances (Can run simultaneously once Config Server is online)
+cd ../../HotelService/HotelService
+java -jar target/hotel-service-0.0.1-SNAPSHOT.jar
+
+cd ../../RatingService/RatingService
+java -jar target/rating-service-0.0.1-SNAPSHOT.jar
+
+cd ../../UserService/UserService
+java -jar target/user-service-0.0.1-SNAPSHOT.jar
+
+# STEP 4: Start Routing Gateway Last (Requires downstream microservices to be available)
+cd ../../ApiGateway/ApiGateway
+java -jar target/api-gateway-0.0.1-SNAPSHOT.jar
+```
+
+## Verification & Monitoring
+
+* **Eureka Dashboard:** Open http://localhost:8761 in your browser to verify that all 5 client engines show a status value of `UP`.
+* **Database Inspection:**
+  * Use **MySQL Workbench** to look inside `user_db`.
+  * Use **pgAdmin 4** to check tables inside `hotel_db`.
+  * Use **MongoDB Compass** to view runtime document collections in `rating_db`.
 
 ## Modifying Configurations
 

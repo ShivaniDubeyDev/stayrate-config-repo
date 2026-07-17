@@ -17,6 +17,24 @@ spring:
           uri: lb://RATING-SERVICE
           predicates:
             - Path=/ratings/**
+            
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://dev-77584981.okta.com/oauth2/default
+      client:
+        registration:
+          okta:
+            client-id: 0oa7w65a24Px9Oyms5d7
+            client-secret: JfsTTqODW21uapbbhKjW42sGzjcNs86GN7WL5dfU
+            scope: openid, profile, email, offline_access
+            provider: okta
+            authorization-grant-type: authorization_code
+            redirect-uri: "{baseUrl}/login/oauth2/code/okta"
+        provider:
+          okta:
+            issuer-uri: https://dev-77584981.okta.com/oauth2/default
 
 eureka:
   instance:
@@ -26,11 +44,3 @@ eureka:
     register-with-eureka: true
     service-url:
       defaultZone: http://localhost:8761/eureka
-
-okta:
-  oauth2:
-    issuer: https://dev-77584981.okta.com/oauth2/default
-    audience: api://default
-    client-id: 0oa7w65a24Px9Oyms5d7
-    client-secret: JfsTTqODW21uapbbhKjW42sGzjcNs86GN7WL5dfU
-    scopes: openid, profile, email, offline_access

@@ -17,7 +17,6 @@ spring:
           uri: lb://RATING-SERVICE
           predicates:
             - Path=/ratings/**
-            
   security:
     oauth2:
       resourceserver:

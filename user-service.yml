@@ -26,8 +26,9 @@ spring:
             provider: auth0
             authorization-grant-type: client_credentials
             scope: internal
-            client-id: <PASTE_M2M_APP_CLIENT_ID_HERE>
-            client-secret: <PASTE_M2M_APP_CLIENT_SECRET_HERE>
+            client-id: 5n34mzwrMbn4d3dpLipxlRRxHb36vtN8
+            client-secret: 2rHfLX8b-I16JTLI7ryV5F1QdHCvjBFgRWfYm0n2s28A3Q2fU-HczGXEMpOCkIa3
         provider:
           auth0:
-            token-uri: https://<YOUR_AUTH0_DOMAIN>/oauth/token
+            token-uri: https://dev-n6u7erw77d6ufb24.us.auth0.com/oauth/token
+    

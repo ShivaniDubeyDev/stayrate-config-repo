@@ -27,8 +27,8 @@ spring:
             provider: auth0
             authorization-grant-type: client_credentials
             scope: internal
-            client-id: 5n34mzwrMbn4d3dpLipxlRRxHb36vtN8
-            client-secret: 2rHfLX8b-I16JTLI7ryV5F1QdHCvjBFgRWfYm0n2s28A3Q2fU-HczGXEMpOCkIa3
+            client-id: stAGL3k8qjMbWbssX4P7pjX7GvmNbKwa
+            client-secret: DvTZu-GyckuWO-aqqwBYSOEXLE7_Q5u4SPY2ijTMC4gzwOSMpL1APGRnhYGdqqfI
         provider:
           auth0:
             token-uri: https://dev-n6u7erw77d6ufb24.us.auth0.com/oauth/token

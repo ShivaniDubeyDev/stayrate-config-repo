@@ -26,8 +26,8 @@ spring:
       client:
         registration:
           auth0:
-            client-id: <PASTE_REGULAR_WEB_APP_CLIENT_ID_HERE>
-            client-secret: <PASTE_REGULAR_WEB_APP_CLIENT_SECRET_HERE>
+            client-id: MdjixhFB73fZvBGBChFHjlab1jTtM1ib
+            client-secret: axSKHYItzQBO4ciUfssOddfpxy3jtJTX02qTGH32ETEDmpwsrCWoL9LK4b4IH406
             scope: openid, profile, email, offline_access
             provider: auth0
             authorization-grant-type: authorization_code

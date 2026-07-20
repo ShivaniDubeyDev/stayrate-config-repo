@@ -24,12 +24,11 @@ spring:
       resourceserver:
         jwt:
           issuer-uri: https://dev-n6u7erw77d6ufb24.us.auth0.com/
-          audience: https://api.stayrate.com
       client:
         registration:
           auth0:
-            client-id: MdjixhFB73fZvBGBChFHjlab1jTtM1ib
-            client-secret: axSKHYItzQBO4ciUfssOddfpxy3jtJTX02qTGH32ETEDmpwsrCWoL9LK4b4IH406
+            client-id: aRJkQMhHWrxAJ3GI22mZtNnjbjnSJOuV
+            client-secret: x9nQg3Sstf6DuSIrhEyxiUFGJt_jc0wijp1II9eDsEaHbKA3v6DQmwZMnS8P0QGM
             scope: openid, profile, email, offline_access
             provider: auth0
             authorization-grant-type: authorization_code

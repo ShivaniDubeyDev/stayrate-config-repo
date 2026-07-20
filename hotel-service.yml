@@ -2,6 +2,8 @@ server:
   port: 8082
 
 spring:
+  application:
+    name: HOTEL-SERVICE
   datasource:
     url: jdbc:postgresql://localhost:5432/hotel_db
     username: postgres
@@ -20,7 +22,6 @@ spring:
       resourceserver:
         jwt:
           issuer-uri: https://dev-n6u7erw77d6ufb24.us.auth0.com/
-          audience: https://api.stayrate.com
 
 eureka:
   instance:

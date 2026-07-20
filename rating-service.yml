@@ -2,6 +2,8 @@ server:
   port: 8083
 
 spring:
+  application:
+    name: RATING-SERVICE
   data:
     mongodb:
       uri: mongodb://localhost:27017/rating_db
@@ -11,7 +13,6 @@ spring:
       resourceserver:
         jwt:
           issuer-uri: https://dev-n6u7erw77d6ufb24.us.auth0.com/
-          audience: https://api.stayrate.com
 
 eureka:
   instance:

@@ -33,6 +33,8 @@ spring:
             provider: auth0
             authorization-grant-type: authorization_code
             redirect-uri: "http://localhost:8087/login/oauth2/code/auth0"
+            # TO FORCE AUTH0 TO ISSUE A JWT ACCESS TOKEN
+            audience: https://api.stayrate.com
         provider:
           auth0:
             issuer-uri: https://dev-n6u7erw77d6ufb24.us.auth0.com/

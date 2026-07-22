@@ -1,18 +1,1 @@
-spring:
-  security:
-    oauth2:
-      client:
-        registration:
-          auth0:
-            client-id: "1dDPLRJsaPuP1O1sQEUs3Sx9eropFBt1"
-            client-secret: "lvGMFtj6fIc2eXoZhxXtDB_n1ueU8anioqfHrmURkuxKaxe_U4uYGM4kI2zHCsC4"
-            client-authentication-method: client_secret_post
-            scope: openid, profile, email
-            authorization-grant-type: authorization_code
-            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
-        provider:
-          auth0:
-            issuer-uri: https://dev-n6u7erw77d6ufb24.us.auth0.com/
-      resourceserver:
-        jwt:
-          issuer-uri: https://dev-n6u7erw77d6ufb24.us.auth0.com/
+

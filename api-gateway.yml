@@ -4,8 +4,8 @@ spring:
       client:
         registration:
           auth0:
-            client-id: "aRJKQMHMRxAJ3GI22mZtNnjbjnSJOuV"
-            client-secret: "x9nQg3Sstf6DuSIrhEyxiUFGJt_jc0wijp1II9eDsEaHbKA3v6DQmwZMnS8P0QGM"
+            client-id: "1dDPLRJsaPuP1O1sQEUs3Sx9eropFBt1"
+            client-secret: "lvGMFtj6fIc2eXoZhxXtDB_n1ueU8anioqfHrmURkuxKaxe_U4uYGM4kI2zHCsC4"
             client-authentication-method: client_secret_post
             scope: openid, profile, email
             authorization-grant-type: authorization_code
